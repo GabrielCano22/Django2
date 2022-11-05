@@ -17,12 +17,12 @@ from unicodedata import name
 from django.contrib import admin
 from django.urls import path
 
-from web.views import Home,Platos,Empleados
+from web.views import Home,PlatosVista,Empleados
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', Home, name='home'),
-    path('platos/', Platos,name='platos'),
+    path('platos/', PlatosVista,name='platos'),
     path('empleados/', Empleados, name='empleados')
 ]

@@ -16,8 +16,9 @@
         <div class="row">
             <div class="col-12 col-md-5"><img src="../static/img/Vegetal1.jpg" alt="Vegetales(Supuestamente)" class="w-100 img-fluid"></div>
             <div class="col-12 col-md-7"><h2>Registro de platos</h2>            
-            <form>
+            <form method="POST">
                 {{formulario}}
+                {% csrf_token %}
                 <button type="submit" class="btn btn-primary w-100" style="background-color: #37d773; border-color:black; font-weight: bold;font-size: 20px  ;">Enviar</button>
             </form></div>
 

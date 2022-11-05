@@ -11,6 +11,7 @@ class FormularioPlatos(forms.Form):
     )
 
     nombre=forms.CharField(
+        label="Nombre del plato",
         required=True,
         max_length=10,
         widget=forms.TextInput(attrs={'class':'form-control mb-3'})
@@ -22,7 +23,7 @@ class FormularioPlatos(forms.Form):
     )
     precio=forms.CharField(
         required=True,
-        max_length=20,
+        max_length=200,
         widget=forms.NumberInput(attrs={'class':'form-control mb-3'})
     )
     tipo=forms.ChoiceField(
