@@ -1,0 +1,7 @@
+entrar a cmd
+
+1. python -m venv modules CARPETA MODULES
+2. cd modules, cd Scripts, Activate
+3. cd .. hasta el proyecto principal
+4. pip install -r package.txt
+5. cd config, python manage.py runserver

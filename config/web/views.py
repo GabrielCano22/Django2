@@ -12,11 +12,17 @@ def Home(request):
     
     # Esta vista va a utilizar un formulario de Django, debo crear entonces un objeto de la clase FormularioPlatos
 def PlatosVista(request):
+    # Rutiina para la consulta d eplatos
+    platosConsultados=Platos.objects.all()
+    print(platosConsultados)
+
     formulario=FormularioPlatos()
     
     #Creamos un diccionario para enviar el formulario al html(template)
     data={
-        'formulario':formulario
+        'formulario':formulario,
+        'bandera':False,
+        'platos':platosConsultados
     }
     #Recibimos los datos del formulario
     if request.method=="POST":
@@ -35,9 +41,11 @@ def PlatosVista(request):
             #intentaré llevar mis datos a la db
             try:
                 platoNuevo.save()
+                data["bandera"]=True
                 print("Exito guardando")
             except Exception as error:
                 print("upsss", error)
+                data["bandera"]=False
     
     return render(request,'menuPlatos.html',data)
 

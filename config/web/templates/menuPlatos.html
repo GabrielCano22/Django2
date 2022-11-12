@@ -7,11 +7,21 @@
     <link rel="stylesheet" href="../static/styles/estilosHome.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Menú Platos</title>
 </head>
 <body>
     <header>{% include './shared/menu.html' %}</header>
     <br><br>
+    {% if bandera %}
+    <script>
+        Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+            )
+    </script>
+    {% endif %}
     <main><div class="container mt-5">
         <div class="row">
             <div class="col-12 col-md-5"><img src="../static/img/Vegetal1.jpg" alt="Vegetales(Supuestamente)" class="w-100 img-fluid"></div>
@@ -24,6 +34,15 @@
 
         </div>
     </div></main>
+    <section>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-4">
+                {% for plato in platos %}
+                <h1>{{plato.nombre}}</h1>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
     <footer></footer>
 </body>
 </html>
