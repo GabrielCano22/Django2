@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 .banner{
     background-image: url('../img/banner.jpg');
     background-position: top,center;
@@ -19,11 +22,52 @@
     z-index: -1;
 }
 .menu{
-    background-color: #37d773;
+    background-color: #ffffff;
+    width: 100%;
+    z-index: -1;
+    margin-top: 5vh;
+}
+.menu #contenedor{
+    display: inline-flex;
+    margin-left: 15vw;
+    border-bottom-color: solid 3px rgb(0, 0, 0);
+    margin-bottom: 1vh;
+}
+.menu #contenedor #logo{
+    width: 15%;
+    height: 12%;
+    margin-right: 20vw;
+}
+.menu a{
+    font-size: 20px;
+    color: #abb8c3;
 }
 .zoom{
     transition: transform.5s;
 }
 .zoom:hover{
     transform: scale(1.1);
+}
+.nav{
+    background-color: #F5BCBC;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    text-align: right;
+}
+.nav #texto{
+    display: inline-flex;
+    margin-left: 70vw;
+    color: #fff;
+    border-right-color: #fff;
+}
+.nav #iconos{
+    margin-top: 1vh;
+}
+.nav a{
+    color: #fff;
+    font-size: 13px;
+}
+.nav #iconos a{
+    margin-left: .4vw;
 }
