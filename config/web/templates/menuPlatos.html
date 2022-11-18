@@ -29,7 +29,7 @@
             <form method="POST">
                 {{formulario}}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary w-100" style="background-color: #37d773; border-color:black; font-weight: bold;font-size: 20px  ;">Enviar</button>
+                <button type="submit" class="btn btn-primary w-100" style="background-color: #F5BCBC; border-color:black; font-weight: bold;font-size: 20px  ;">Enviar</button>
             </form></div>
 
         </div>
@@ -43,6 +43,8 @@
             </div>
         </div>
     </section>
-    <footer></footer>
+    <footer>
+        {% include './shared/footer.html' %}
+    </footer>
 </body>
 </html>

@@ -122,7 +122,17 @@ class DjangoSession(models.Model):
         managed = False
         db_table = 'django_session'
 
+class Empleados(models.Model):
+    nombre = models.CharField(max_length=40)
+    salario = models.IntegerField()
+    direccion = models.CharField(max_length=40)
+    telefono = models.IntegerField()
+    tipoEmpleado = models.IntegerField()
 
+    class Meta:
+        managed = False
+        db_table = 'empleados'
+        
 class Platos(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=100)

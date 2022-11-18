@@ -3,6 +3,8 @@ body{
 }
 .banner{
     background-image: url('../img/banner.jpg');
+    width: 100%;
+    height: 100%;
     background-position: top,center;
     background-size: cover;
     background-attachment: fixed;
@@ -22,10 +24,19 @@ body{
     z-index: -1;
 }
 .menu{
-    background-color: #ffffff;
+    background-color: #fff;
     width: 100%;
     z-index: -1;
-    margin-top: 5vh;
+    margin-top: 4vh;
+}
+.menu #links:hover{
+    color: #000;
+}
+.menuPlatos{
+    background-color: #F5BCBC;
+    width: 100%;
+    z-index: -1;
+    margin-top: 4vh;
 }
 .menu #contenedor{
     display: inline-flex;
@@ -42,12 +53,28 @@ body{
     font-size: 20px;
     color: #abb8c3;
 }
+#boton{
+    background-color: #ffff;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 20px;
+    font-weight: bold;
+    border-color: #abb8c3;
+    color: #000;
+    transition: transform.5s;
+}
+#boton:hover{
+    background-color: #f5f5f5;
+    color: grey;
+    transform: scale(1.1);
+}
 .zoom{
     transition: transform.5s;
 }
 .zoom:hover{
     transform: scale(1.1);
 }
+
 .nav{
     background-color: #F5BCBC;
     position: absolute;

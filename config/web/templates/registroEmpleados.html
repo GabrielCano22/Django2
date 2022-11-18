@@ -7,12 +7,41 @@
     <link rel="stylesheet" href="../static/styles/estilosHome.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Registrar Empleados</title>
 </head>
 <body>
     <header>{% include './shared/menu.html' %}</header>
     <br><br>
+    {% if flag %}
+    <script>
+        Swal.fire(
+            'Bien Hecho',
+            'Datos enviados con éxito',
+            'Finalizado'
+        )
+    </script>
+    {% endif %}
+    <main><div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-5"><img src="../static/img/mesero.jpg" alt="mesero" class="w-100 img-fluid"></div>
+            <div class="col-12 col-md-7"><h2>Registro de empleados</h2>            
+            <form method="POST">
+                {{formulario}}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary w-100" style="background-color: #F5BCBC; border-color:black; font-weight: bold;font-size: 20px  ;">Registrar</button>
+            </form></div>
 
-    <main><h1>Estamos Registrando a los Empleados</h1></main>
+        </div>
+    </div></main>
+    <section>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-4">
+                {% for empleado in empleados %}
+                <h1>{{empleado.nombre}}</h1>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 </body>
 </html>
