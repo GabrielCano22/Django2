@@ -55,31 +55,32 @@ def EmpleadosVista(request):
     empleadosConsultados=Empleados.objects.all()
     print(empleadosConsultados)
 
-    form=FormularioEmpleados()
-    date={
-        'formulario':form,
-        'flag':False,
+    formulario=FormularioEmpleados()
+    data={
+        'formulario':formulario,
+        'bandera':False,
         'empleados':empleadosConsultados
     }
     if request.method=="POST":
-        datosForm=FormularioEmpleados(request.POST)
-        if datosForm.is_valid():
-            datosclean=datosForm.cleaned_date
-            print(datosclean),
+        datosFormulario=FormularioEmpleados(request.POST)
+        if datosFormulario.is_valid():
+            datosLimpios=datosFormulario.cleaned_data
+            print(datosLimpios),
 
             empleadoNuevo=Empleados(
-                nombre=datosclean["nombre"],
-                salario=datosclean["salario"],
-                direccion=datosclean["direccion"],
-                telefono=datosclean["telefono"],
-                tipoEmpleado=datosclean["tipoEmpleado"]
+                nombre=datosLimpios["nombre"],
+                imagen=datosLimpios['imagen'],
+                salario=datosLimpios["salario"],
+                direccion=datosLimpios["direccion"],
+                telefono=datosLimpios["telefono"],
+                tipoEmpleado=datosLimpios["tipoEmpleado"]
             )
             #Llevando los datos a la db
             try:
                 empleadoNuevo.save()
-                date["flag"]=True
+                data["bandera"]=True
                 print("Empleado guardado con éxito")
             except Exception as error:
                 print("se jodió esto", error)
-                date["flag"]=False
-    return render(request,'registroEmpleados.html',date)
+                data["bandera"]=False
+    return render(request,'registroEmpleados.html',data)

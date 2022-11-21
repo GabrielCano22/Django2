@@ -13,7 +13,7 @@ class FormularioPlatos(forms.Form):
     nombre=forms.CharField(
         label="Nombre del plato",
         required=True,
-        max_length=10,
+        max_length=50,
         widget=forms.TextInput(attrs={'class':'form-control mb-3'})
     )
 
@@ -33,6 +33,6 @@ class FormularioPlatos(forms.Form):
     )
     descripcion=forms.CharField(
         required=False,
-        max_length=20,
+        max_length=500,
         widget=forms.Textarea(attrs={'class':'form-control mb-3'})
     )
